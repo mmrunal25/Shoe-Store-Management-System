@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} Shoe Cart{% endblock %}
+
+{% block content %}
+<section class="vh-90 gradient-custom">
+    <div class="container py-lg-3 h-50">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-md-7 offset-sm-1">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-md-3 p-md-3">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">CART</h3>
+
+                <div class="row justify-content-lg-center">
+            <div>
+            <button type="submit" class="btn btn-primary mt-2 mb-2"> <a href="{% url 'proceed_to_pay' %} {{ total_amount }}" class="btn btn-primary" >Proceed To Buy</a> </button></li>     
+            </div>
+    
+            {% for cart_item in cart_items %}
+
+                    
+                            <img src="{{ cart_item.shoe.product_image.url }}" height="100px" width="100px" class="img-fluid" alt="{{ cart_item.shoe.name }}">               
+                            <strong>
+                            <ul class="row" for="detail align-content-left" >
+                            <!--<li class="row" for="shoeid align-content-left">Shoe ID : {{cart_item.id}}</li>-->
+                            <li class="row" for="brand align-content-left">Brand : {{cart_item.shoe.brand}} </li>
+                            <!--<li class="row" for="size align-content-left">Size : {{cart_item.shoe.size}} </li>
+                            <li class="row" for="color align-content-left">Color :{{cart_item.shoe.color}} </li>-->
+                            <li class="row" for="price align-content-left">Price : Rs. {{ cart_item.shoe.price  }}</li>
+                            <li class="row" for="price align-content-left">Quantity : {{ cart_item.quantity }}</li>
+                            </strong>
+                    
+                    <div>   
+                    <button type="submit" class="btn btn-primary mt-2 mb-2 text-white"><a href="{% url 'removeproduct' cart_item.id %}" class="btn btn-primary">Remove Product</a> </button>
+                    </div>
+                {% endfor %}
+                
+                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+{% endblock %}
+
+
+

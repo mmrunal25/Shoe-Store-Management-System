@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %} product you searched will appear here{% endblock %}
+
+{% block content %}
+<div class="row">
+<div class="col-md-6 offset-md-2 mt-4 mb-4">
+    
+    <!--we will add shoe or we will show shoe list here using for -->
+
+    {% if search_query %} 
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Showing  results for : <strong>{{ search_query }} </strong>
+            <button type="button" class="close" data-dismis="alert" aria-label="close">
+            <span aria-hidden= "true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+
+
+
+
+<div class="row">
+    
+                <div class="col-sm-auto mt-4 mb-4">
+                    {% for s in shoe %}
+                <div class="card">        
+                    {% if s.product_image %}
+                    <img src="{{ s.product_image.url }}" width="300px" height="100px" alt="Image loading" class="img-fluid rounded-9 float-START"/>
+                    {% else %}
+                    <p>No Image</p>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                </div>
+            
+            {% for s in shoe %}
+            <div class="col-sm-auto mt-4 mb-4" for="h6 align-content-left" style="justify-content:left ; background-color:lavenderblush;">
+                <h6 class="active">Shoe ID :{{ s.id }} </br>
+                <h6 class="active">Brand : {{ s.brand }}</br>
+                <h6 class="active">Product Price : Rs.{{ s.price }}   </br>   
+                <h6 class="active">Product Size : {{ s.size }}   </br>   
+                                
+                    <label for="quantity align-content-left"> Quantity : </label> 
+                    <input type="number" id="quantity" name="quantity" min="1" value="1"> 
+                    <button type="submit" class="btn btn-secondary mt-4 mb-4">Add To Cart</button>
+                {% endfor %}     
+            </div>
+          
+</div>
+</div>
+</div>
+</div >
+      
+    {% endblock %}

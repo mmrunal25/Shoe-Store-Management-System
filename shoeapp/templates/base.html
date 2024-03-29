@@ -1,0 +1,43 @@
+{% load static %}
+<!Doctype html>
+<html>
+    <head> 
+        <title> Shoe Store Management System </title>
+        <!--<link href="{% static 'styles.css' %}" type="text/css" rel="stylesheet">-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body style="background: repeating-linear-gradient(#E1F0DA, #D4E7C5, #BFD8AF, #99BC85); text-align: center; height: 740px; width: 1566px; border-radius: 5px;">
+            
+            <header >
+                {% include 'shoeapp/nav.html' %}
+            </header>
+            
+            <div>
+                {% block content %}
+                Mrunal kindly chech this page.....
+                {% endblock %}
+            </div>
+        </body>
+<!--footer part starts from here -->
+        <footer style="position:sticky; position: sticky; bottom:0;">
+            <div class="container-fluid bg-light text-dark-50 py-4">
+                <div class="container">
+                    <div class="row g-5">
+                        <div class="col-md-6 text-center text-md-start">
+                            <p class="mb-md-0">&copy; <a class="text-dark" href="#">2024 Shoe Store Management System : @mrunal </a>. All Rights Reserved.</p>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <p class="mb-0"><a class="text-dark "></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+    
+</html>

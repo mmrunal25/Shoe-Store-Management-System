@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}  Shoe List for shoe project {% endblock %}
+
+{% block content %}
+<!--<h2 class="mt-2 mb-2 text-black-50">Product Detail</h2>-->
+<div class="row justify-content-lg-center">
+         
+                                    <div class="col-sm-auto mt-4 mb-4">
+                                    <div class="container">     
+                                    <img src="{{ shoe.product_image.url }}" height="300px" width="300px" class="img-fluid card pt-9 pb-6" alt="{{ shoe.name }}">
+                                    </div>
+                                    </div>
+                                    
+                                    <div class="col-sm-auto mt-5 mb-4">
+                                    <div class="container"><strong>
+                                    <ul class="row" for="detail align-content-left" >Details  :
+                                    <li class="row" for="shoeid align-content-left">Shoe ID : {{shoe.id}}</li>
+                                    <li class="row" for="brand align-content-left">Brand : {{shoe.brand}} </li>
+                                    <li class="row" for="size align-content-left">Size : {{shoe.size}} </li>
+                                    <li class="row" for="color align-content-left">Color :{{shoe.color}} </li>
+                                    <li class="row" for="price align-content-left">Price : Rs. {{ shoe.price  }}</li></strong>
+                                    
+                                    <div class="col-sm-auto mt-5 mb-4">   
+                                    <li class="row" for="price align-content-left">
+                                        <form action="{% url 'add_toCart' pk=shoe.pk %}" method='post'>
+                                        {% csrf_token %}
+                                        <label for="quantity"><b> Quantity : </b></label> 
+                                        <input type="number" id="quantity" name="quantity" min="1" value="1"> 
+                                        <button type="submit" class="btn btn-primary mt-2 mb-2">Add To Cart</button></li> 
+                                        </form> 
+                                    </ul>
+                                    </div>
+                                    </div>
+                                    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+;:\Users\LENOVO>cd ..
+
+C:\Users>cd ..
+
+C:\>cd xampp
+
+C:\xampp>cd mysql
+
+C:\xampp\mysql>cd bin
+
+C:\xampp\mysql\bin>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 36
+Server version: 10.4.25-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases
+    ->
+    ->
+    ->
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| e408               |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+6 rows in set (0.002 sec)
+
+MariaDB [(none)]> use database e408;
+ERROR 1049 (42000): Unknown database 'database'
+MariaDB [(none)]> use e408;
+Database changed
+MariaDB [e408]>

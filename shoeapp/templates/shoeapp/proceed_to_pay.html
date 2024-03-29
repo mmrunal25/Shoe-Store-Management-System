@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} Pets Detail Page {% endblock %}
+
+{% block content %}
+<div class="col-lg-7 offset-md-3">
+    <div class="card mt-4 mb-4">
+        <h1>Proceed To Pay </h1>
+        <div class="row mt-4 mb-4">
+        <h3>Total amount of cart: {{ total_amount }}</h3>
+        </div>
+        <form action="{% url 'payment_confirmation' %}" method="get">
+            {% csrf_token %}
+            <input type="hidden" name="total_amount" value="total_amount">
+            <button class="btn btn-primary mt-4 mb-4" type="submit">Confirm Payment</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
